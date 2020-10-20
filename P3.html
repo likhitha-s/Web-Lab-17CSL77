@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Animation of Font size</title>
+	<script>
+		var font=0,time;
+		function run() {
+			time=window.setInterval("i()",100);
+		}
+		function i() {
+			font=font+1;
+			show.innerHTML="INCREASE @"+font;
+			show.style.fontSize=font;
+			if(font>49)
+			{
+				window.clearTimeout(time);
+				window.setInterval("d()",100);
+			}
+		}
+		function d() {
+			font=font-1;
+			show.innerHTML="DECREASE @"+font;
+			show.style.fontSize=font;
+			if(font==5)
+			{
+				window.clearTimeout(time);
+				window.setInterval("i()",100);
+			}
+		}
+	</script>
+</head>
+<body onload="run()">
+	<p id="show"></p>
+</body>
+</html>
